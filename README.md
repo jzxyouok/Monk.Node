@@ -64,11 +64,23 @@ CREATE TABLE member
 ```
 
 
-### 运行
+- 运行
 
 ```
 node app.js
 ```
+
+## 查看效果
+
+```
+// 会员首页
+http://localhost/member
+
+// 新增会员 
+http://localhost/member/create
+```
+
+
 
 
 ## 友情捐赠
