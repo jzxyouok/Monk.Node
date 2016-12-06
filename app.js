@@ -47,6 +47,9 @@ app.use(session({
 	saveUninitialized: true
 }));
 
+// 路由控制
+app.use(router);
+
 // 错误处理
 // 404处理
 app.use(function (req, res, next) {
@@ -63,9 +66,6 @@ app.use(function (err, req, res, next) {
 		error: (app.get('env') === 'development') ? err : {}
 	});
 });
-
-// 路由控制
-app.use(router);
 
 // 设置控制器文件夹并绑定到路由
 expressController
