@@ -54,6 +54,8 @@ npm install
 - 在MSSQL 创建表（本实例默认是`mssql`）
 
 ```
+USE monk_node
+GO
 CREATE TABLE member
 (
 	id INT IDENTITY(1,1) PRIMARY KEY,
