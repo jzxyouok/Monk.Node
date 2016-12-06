@@ -16,9 +16,27 @@
 
 ## 使用教程
 
+### 初始化依赖项目
 ```
 npm install
+```
 
+### 修改config/db.json 数据库配置文件，默认采用的是mssql（如需修改，修改db.json中 mssql为mysql）
+
+### 在MSSQL 创建表（本事例默认是mssql）
+
+```
+CREATE TABLE member
+(
+	id INT IDENTITY(1,1) PRIMARY KEY,
+	name NVARCHAR(32) NOT NULL
+)
+```
+
+
+### 运行
+
+```
 node app.js
 ```
 
