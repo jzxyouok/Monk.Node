@@ -29,10 +29,14 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //flash支持
 app.use(flash());
 
+// 日志输出
 app.use(logger('dev'));
-// 传输数据json处理
+
+// 处理非get提交数据
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// 回话处理
 // cookie处理
 app.use(cookieParser());
 // session处理
@@ -43,29 +47,30 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-// 路由控制
-app.use(router);
-
+// 错误处理
 // 404处理
 app.use(function (req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
 	next(err);
 });
-
 // 错误或者服务器500异常处理
 app.use(function (err, req, res, next) {
 	res.status(err.status || 500);
+	// 默认指定的是views/error.ejs
 	res.render('error', {
 		message: err.message,
 		error: (app.get('env') === 'development') ? err : {}
 	});
 });
 
-// 绑定控制器
+// 路由控制
+app.use(router);
+
+// 设置控制器文件夹并绑定到路由
 expressController
 	.setDirectory(__dirname + '/controllers')
 	.bind(router);
 
-// 端口启动
+// 监听3000端口
 app.listen(3000);
