@@ -14,7 +14,7 @@
 - 开发理念：`一切从简，只为了更懒`
 - 码云地址：[http://git.oschina.net/baisoft_org/Monk.Node](http://git.oschina.net/baisoft_org/Monk.Node)
 
-## 使用教程
+## 使用教程（需要Node.js开发基础）
 
 - 初始化依赖项目
 
