@@ -16,14 +16,42 @@
 
 ## 使用教程
 
-### 初始化依赖项目
+- 初始化依赖项目
+
 ```
 npm install
 ```
 
-### 修改config/db.json 数据库配置文件，默认采用的是mssql（如需修改，修改db.json中 mssql为mysql）
+- 修改 `config/db.json` 数据库配置文件，默认采用的是 `mssql`（如需修改，修改db.json中 mssql为mysql）
 
-### 在MSSQL 创建表（本事例默认是mssql）
+```
+{
+    "development": {
+        "username": "sa",
+        "password": "000000",
+        "database": "monk_node",
+        "host": "MONKSOUL",
+        "dialect": "mssql"  // 修改这里(mssql,mysql,sqlite,pg)
+    },
+    "test": {
+        "username": "sa",
+        "password": "000000",
+        "database": "monk_node",
+        "host": "MONKSOUL",
+        "dialect": "mssql"    // 修改这里(mssql,mysql,sqlite,pg)
+    },
+    "production": {
+        "username": "sa",
+        "password": "000000",
+        "database": "monk_node",
+        "host": "MONKSOUL",
+        "dialect": "mssql"    // 修改这里(mssql,mysql,sqlite,pg)
+    }
+}
+```
+
+
+- 在MSSQL 创建表（本事例默认是`mssql`）
 
 ```
 CREATE TABLE member
