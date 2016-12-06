@@ -16,16 +16,16 @@ var db = {};
 
 fs.readdirSync(__dirname)
     // 过滤index.js注入文件，index.js作用是动态注入实体模型，也是models文件夹入口文件
-    .filter(function(file) {
+    .filter(function (file) {
         return (file.indexOf(".") !== 0) && (file !== "index.js");
     })
-    .forEach(function(file) {
-        // 遍历Models下面所有实体模型，并导入 sequelize Model中
+    // 遍历Models下面所有实体模型，并导入 sequelize Model中
+    .forEach(function (file) {
         var model = sequelize.import(path.join(__dirname, file));
         db[model.name] = model;
     });
 // 绑定模型关系（1对1，1对多，多对多）
-Object.keys(db).forEach(function(modelName) {
+Object.keys(db).forEach(function (modelName) {
     if ("associate" in db[modelName]) {
         db[modelName].associate(db);
     }
