@@ -50,6 +50,11 @@ app.use(session({
 // 路由控制
 app.use(router);
 
+// 设置控制器文件夹并绑定到路由
+expressController
+	.setDirectory(__dirname + '/controllers')
+	.bind(router);
+
 // 错误处理
 // 404处理
 app.use(function (req, res, next) {
@@ -61,16 +66,11 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
 	res.status(err.status || 500);
 	// 默认指定的是views/error.ejs
-	res.render('error', {
+	res.render('share/error', {
 		message: err.message,
 		error: (app.get('env') === 'development') ? err : {}
 	});
 });
-
-// 设置控制器文件夹并绑定到路由
-expressController
-	.setDirectory(__dirname + '/controllers')
-	.bind(router);
 
 // 监听3000端口
 app.listen(3000);
