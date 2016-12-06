@@ -1,6 +1,6 @@
 # Monk.UI
 
-原生Javascript开发，不依赖任何第三方框架，赶快让你的表单亮起来吧！
+基于Node.js + Express.js(4.x) + Sequelize.js 的一套MVC框架。
 
 ## 作者信息 
 
