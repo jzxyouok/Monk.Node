@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "sa",
+        "password": "000000",
+        "database": "monk_node",
+        "host": "MONKSOUL",
+        "dialect": "mssql"
+    },
+    "test": {
+        "username": "sa",
+        "password": "000000",
+        "database": "monk_node",
+        "host": "MONKSOUL",
+        "dialect": "mssql"
+    },
+    "production": {
+        "username": "sa",
+        "password": "000000",
+        "database": "monk_node",
+        "host": "MONKSOUL",
+        "dialect": "mssql"
+    }
+}

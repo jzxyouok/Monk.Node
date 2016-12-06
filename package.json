@@ -1,0 +1,47 @@
+{
+  "name": "monk.node",
+  "version": "1.0.0",
+  "author": "百小僧",
+  "description": "Nodejs MVC 框架",
+  "keywords": [
+    "Monk.Node",
+    "Node.js MVC",
+    "Nodejs MVC",
+    "百小僧",
+    "Monk.Soul",
+    "MonkSoul",
+    "MonkNode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "百小僧",
+      "email": "8020292@qq.com"
+    }
+  ],
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.3.3",
+    "ejs": "^2.5.4",
+    "express": "^4.14.0",
+    "express-controller": "^0.2.9",
+    "express-session": "^1.14.2",
+    "morgan": "^1.7.0",
+    "mysql2": "^1.1.2",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.27.0",
+    "serve-favicon": "^2.3.2",
+    "sqlite3": "^3.1.8",
+    "tedious": "^1.14.0"
+  }
+}
