@@ -51,7 +51,7 @@ npm install
 ```
 
 
-- 在MSSQL 创建表（本事例默认是`mssql`）
+- 在MSSQL 创建表（本实例默认是`mssql`）
 
 ```
 CREATE TABLE member
