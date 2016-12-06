@@ -1,4 +1,4 @@
-# Monk.UI
+# Monk.Node
 
 基于Node.js + Express.js(4.x) + Sequelize.js 的一套MVC框架。
 
