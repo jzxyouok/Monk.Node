@@ -1,4 +1,4 @@
-// 加载引用包
+// 载入常用nodejs模块
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
