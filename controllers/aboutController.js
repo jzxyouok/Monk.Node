@@ -1,5 +1,5 @@
 module.exports = {
     get_index: function (req, res) {
-        res.render("home/index");
+        res.render("about/index");
     }
-}
+};
