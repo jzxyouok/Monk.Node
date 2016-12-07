@@ -19,7 +19,7 @@ fs.readdirSync(__dirname)
     .filter(function (file) {
         return (file.indexOf(".") !== 0) && (file !== "index.js");
     })
-    // 遍历Models下面所有实体模型，并导入 sequelize Model中
+    // 遍历Models下面所有实体模型，并导入db对象中
     .forEach(function (file) {
         var model = sequelize.import(path.join(__dirname, file));
         db[model.name] = model;
