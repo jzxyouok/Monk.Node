@@ -303,6 +303,20 @@ module.exports={
 };
 ```
 
+### 静态文件
+
+静态文件放在public目录下，使用教程：
+
+```
+<img src="/img/logo.png" />
+
+
+<script src="/js/index.js"></script>
+
+<link href="/css/style.css" />
+
+```
+
 
 ## 友情捐赠
 
