@@ -17,6 +17,8 @@
 
 ## 框架特点
 
+亲，只需要会JavaScript就可以开发web系统了哦！简单吧！
+
 - 入门非常简单，只需要会Javascript，css，html即可
 - 后端纯Javascript编写，前端也是html，css，JavaScript编写
 - MVC架构（Controller,View,Model)
