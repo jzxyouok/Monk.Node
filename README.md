@@ -21,6 +21,8 @@
 
 ============ 2016.12.07 V1.0.2 ============
 
+- [新增] redis 支持
+- [新增] multer 文件上传
 - [修复] package.json 中 mysql依赖包错误
 
 ============ 2016.12.07 V1.0.1 ============
@@ -328,6 +330,50 @@ module.exports={
 
 <link href="/css/style.css" />
 
+```
+
+### redis 支持，[文档地址](https://www.npmjs.com/package/redis)
+
+```
+var redis = require("redis"),
+    client = redis.createClient();
+
+// if you'd like to select database 3, instead of 0 (default), call
+// client.select(3, function() { /* ... */ });
+
+client.on("error", function (err) {
+    console.log("Error " + err);
+});
+
+client.set("string key", "string val", redis.print);
+client.hset("hash key", "hashtest 1", "some value", redis.print);
+client.hset(["hash key", "hashtest 2", "some other value"], redis.print);
+client.hkeys("hash key", function (err, replies) {
+    console.log(replies.length + " replies:");
+    replies.forEach(function (reply, i) {
+        console.log("    " + i + ": " + reply);
+    });
+    client.quit();
+});
+```
+
+### 文件上传
+
+文件上传集成了 [multer](https://www.npmjs.com/package/multer) 模块，[文档地址](https://www.npmjs.com/package/multer)
+
+```
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' })
+
+module.exports={
+    get_index:function(req,res){
+        upload.single("file");   // 单文件上传
+
+        upload.array("file");   // 多文件上传
+
+        upload.fields([]);  // 强大的混合上传
+    }
+};
 ```
 
 
