@@ -480,6 +480,11 @@ exports.listen = function (server) {
 </script>
 ```
 
+注：默认即时通讯是开启的，如无需实时通信功能，注释 app.js 最下面代码即可：
+
+```
+// require(path.join(__dirname, 'utils/socketServer.js')).listen(server);
+```
 
 ## 友情捐赠
 
