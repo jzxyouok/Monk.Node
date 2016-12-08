@@ -21,6 +21,8 @@
 
 ============ 2016.12.07 V1.0.2 ============
 
+- [新增] 即时通讯、聊天示例（推荐）
+- [新增] socket.io 支持
 - [新增] redis 支持
 - [新增] multer 文件上传
 - [修复] package.json 中 mysql依赖包错误
@@ -56,7 +58,9 @@ www WEB部署目录
 │  ├─index.js       模型载入注入文件（勿删）
 ├─public        静态目录（css,js,img...)
 │  ├─favicon.ico        网站收藏图标
+│  ├─socket.io       socket.io 实时通信客户端脚本
 ├─utils         工具目录
+│  ├─socketServer.js       socket.io 服务端
 ├─views         视图目录
 │  ├─generate   代码生成器视图目录
 │  ├─share      404,500或布局模板目录
@@ -396,6 +400,71 @@ module.exports={
     }]
 };
 
+```
+
+### 实时通信，聊天
+
+本框架已经集成了[socket.io](http://socket.io/)  ，可以开发实时通信，聊天等应用
+
+#### 服务器端代码在  utils/socketServer.js 中编写
+
+```
+var io = require('socket.io')();
+
+// socket.io 基础使用，监听连接请求
+io.on('connection', function (socket) {
+	console.log("客户端连接成功~~");
+
+	// 监听来自客户端事件
+	socket.on('send', function (data) {
+		// 调用客户端receive事件，并传递data
+		io.emit('receive', data);
+	});
+
+
+    // 这里就写各种监听事件就可以了，
+    // 通过 socket.on("") 监听客户端事件，通过 io.emit("") 触发所有客户端事件，socket.emit("") 触发指定客户端
+
+});
+
+
+exports.listen = function (server) {
+    return io.listen(server);
+};
+
+```
+
+#### 客户端示例：
+
+```
+<!-- 引入客户端脚本 -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // 连接服务器
+    var socket = io.connect('http://localhost:3000/');
+
+    window.onload=function(){
+        var send=document.getElementById("send");
+        send.onclick=function(){
+          var name=document.getElementById("name").value;
+          var msg=document.getElementById("msg").value;
+
+          // 发送消息
+          socket.emit('send', { data:name+":"+msg  });
+        };
+
+
+        // 监听服务器消息
+        socket.on('receive', function (data) {
+          console.log(data);
+          var list = document.getElementById("list");
+          // 写入聊天列表
+          list.innerHTML=list.innerHTML+"<br />"+data.data;
+          // 清空msg
+          document.getElementById("msg").value="";
+        });
+    };
+</script>
 ```
 
 

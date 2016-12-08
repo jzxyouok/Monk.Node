@@ -7,6 +7,7 @@ var flash = require('connect-flash');
 
 // express 框架
 var express = require('express');
+var app = express();
 var expressController = require('express-controller');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -14,8 +15,7 @@ var session = require('express-session');
 // 动态注入所有实体模型
 var models = require(path.join(__dirname, 'models'));
 
-// 创建express 实例
-var app = express();
+// 创建express Router 实例
 var router = express.Router();
 
 // 视图加载
@@ -72,5 +72,13 @@ app.use(function (err, req, res, next) {
 	});
 });
 
-// 监听3000端口
-app.listen(3000);
+// 设置端口
+app.set('port', process.env.PORT || 3000);
+var server = app.listen(app.get('port'), function () {
+	var host = server.address().address;
+	var port = server.address().port;
+	console.log('应用启动地址： http://%s:%s', host, port);
+});
+
+// 引入socket 服务器端模块
+require(path.join(__dirname, 'utils/socketServer.js')).listen(server);
