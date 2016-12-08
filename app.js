@@ -87,8 +87,8 @@ app.set('port', process.env.PORT || 3000);
 var server = app.listen(app.get('port'), function () {
 	var host = server.address().address;
 	var port = server.address().port;
-	console.log('应用启动地址： http://%s:%s', host, port);
+	console.log('启动成功！访问地址： http://%s:%s', host, port);
 });
 
 // 引入socket 服务端模块。如无需即时通讯，注释即可
-require(path.join(__dirname, 'utils/socketServer.js')).listen(server);
+require(path.join(__dirname, 'utils', 'socketServer.js')).listen(server);

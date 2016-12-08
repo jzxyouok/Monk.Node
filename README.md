@@ -82,7 +82,7 @@ www WEB部署目录
 │  ├─socketServer.js       socket.io 服务端
 ├─views         视图目录
 │  ├─generate   代码生成器视图目录
-│  ├─share      404,500或布局模板目录
+│  ├─share      错误码：404,500或布局模板目录
 ├─app.js        入口文件
 ├─package.json      配置文件
 
