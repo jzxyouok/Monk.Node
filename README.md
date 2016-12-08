@@ -41,6 +41,8 @@
 - [新增] socket.io 支持
 - [新增] redis 支持
 - [新增] multer 文件上传
+- [新增] uploads 文件夹
+- [优化] app.js 入口文件 端口和静态文件，用户上传文件代码
 - [修复] package.json 中 mysql依赖包错误
 
 ============ 2016.12.07 V1.0.1 ============
@@ -75,6 +77,7 @@ www WEB部署目录
 ├─public        静态目录（css,js,img...)
 │  ├─favicon.ico        网站收藏图标
 │  ├─socket.io       socket.io 实时通信客户端脚本
+├─uploads        用户上传目录
 ├─utils         工具目录
 │  ├─socketServer.js       socket.io 服务端
 ├─views         视图目录

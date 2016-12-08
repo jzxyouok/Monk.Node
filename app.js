@@ -24,6 +24,8 @@ app.set('view engine', 'ejs');
 
 // 静态文件载入
 app.use(express.static(path.join(__dirname, 'public')));
+// 上传文件
+app.use(express.static(path.join(__dirname, 'uploads')));
 // 设置icon图标（如果没有favicon.icon）可以注释这一行代码
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //flash支持
