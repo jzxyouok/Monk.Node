@@ -1,15 +1,23 @@
 // 载入常用nodejs模块
 var path = require('path');
+
+// favicon.ico 支持
 var favicon = require('serve-favicon');
+// 日志输出
 var logger = require('morgan');
+// post参数解析
 var bodyParser = require('body-parser');
+// flash支持
 var flash = require('connect-flash');
 
 // express 框架
 var express = require('express');
 var app = express();
+// 控制器
 var expressController = require('express-controller');
+// cookie
 var cookieParser = require('cookie-parser');
+// session
 var session = require('express-session');
 
 // 动态注入所有实体模型
