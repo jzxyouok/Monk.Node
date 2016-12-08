@@ -36,7 +36,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// 回话处理
+// 会话处理
 // cookie处理
 app.use(cookieParser());
 // session处理
