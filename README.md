@@ -332,7 +332,9 @@ module.exports={
 
 ```
 
-### redis 支持，[文档地址](https://www.npmjs.com/package/redis)
+### redis 支持
+
+集成了 [redis](https://www.npmjs.com/package/redis) 模块，[文档地址](https://www.npmjs.com/package/redis)
 
 ```
 var redis = require("redis"),
