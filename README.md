@@ -368,7 +368,7 @@ var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' })
 
 module.exports={
-    get_index:function(req,res){
+    post_upload:function(req,res){
         upload.single("file");   // 单文件上传
 
         upload.array("file");   // 多文件上传
@@ -376,6 +376,26 @@ module.exports={
         upload.fields([]);  // 强大的混合上传
     }
 };
+
+
+
+
+// 还可以更简单的写法===============================
+
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' })
+
+module.exports={
+    // 单文件上传
+    post_upload:[upload.single('file'), function (req, res, next) {
+        // 上传成功。。。。
+    }],
+     // 多文件上传
+    post_uploads:[upload.array('file',10), function (req, res, next) {
+        // 上传成功。。。。
+    }]
+};
+
 ```
 
 
