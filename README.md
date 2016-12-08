@@ -15,6 +15,19 @@
 - 开发理念：`一切从简，只为了更懒`
 - 码云地址：[http://git.oschina.net/baisoft_org/Monk.Node](http://git.oschina.net/baisoft_org/Monk.Node)
 
+## 框架特点
+
+- 入门及其简单
+- 后端纯Javascript编写，前端也是html，css，JavaScript编写
+- MVC架构（Controller,View,Model)
+- 支持Session，Cookie等会话操作
+- 支持强大的数据库CURD操作，支持数据库有（'mysql'|'mariadb'|'sqlite'|'postgres'|'mssql'）
+- 内置数据库模型生成器
+- 支持实时通信应用开发
+- 支持redis存储
+- 支持文件上传
+- 还有更多等你发现
+
 ## 更新记录
 
 ```
