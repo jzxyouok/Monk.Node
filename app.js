@@ -75,7 +75,7 @@ app.use(function (req, res, next) {
 // 错误或者服务器500异常处理
 app.use(function (err, req, res, next) {
 	res.status(err.status || 500);
-	// 默认指定的是views/error.ejs
+	// 默认指定的是views/share/error.ejs
 	res.render('share/error', {
 		message: err.message,
 		error: (app.get('env') === 'development') ? err : {}
